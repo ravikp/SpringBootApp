@@ -116,3 +116,5 @@ springboot.ipr
 springboot_main.iml
 springboot_test.iml
 .settings/org.eclipse.buildship.core.prefs
+.settings/
+bin/
