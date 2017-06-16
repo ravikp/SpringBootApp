@@ -11,4 +11,4 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   bucket: "aws.ravikp.springboot"
   region: ap-south-1
-  local_dir: builds/libs
+  local_dir: ./build/libs
