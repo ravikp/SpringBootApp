@@ -12,3 +12,7 @@ deploy:
   bucket: "aws.ravikp.springboot"
   region: ap-south-1
   local_dir: ./build/libs
+
+cache:
+  directories:
+  - $HOME/.m2
