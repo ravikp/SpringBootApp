@@ -12,4 +12,9 @@ class HelloController {
     public String index() {
         return "Greetings.." + new Date() + System.lineSeparator();
     }
+
+    @RequestMapping("/hello")
+    public String hello() {
+        return "Hello world:- " + new Date() + System.lineSeparator();
+    }
 }
