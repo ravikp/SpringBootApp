@@ -10,10 +10,8 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   bucket: "aws.ravikp.springboot"
-  region: ap-south-1 
-  file_glob: false
-  file: "springboot.jar"
-  local_dir: ./build/libs
+  region: ap-south-1
+  local_dir: ./build/fulljar
   skip_cleanup: true
 
 cache:

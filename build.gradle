@@ -45,3 +45,11 @@ idea {
         outputDir = file("$buildDir/classes/main/")
     }
 }
+
+task generateFullJar(type:Copy) {
+    from(jar.archivePath)
+    into("$buildDir/fulljar")
+    exclude("*.original")    
+}
+
+build.dependsOn generateFullJar
