@@ -13,7 +13,7 @@ deploy:
   app: "SpringBoot"
   env: "springboot-env"
   bucket_name: "aws.ravikp.springboot"
-  zip_file: "./build/fulljar/springboot.jar"
+  zip_file: "./build/distributions/springboot.zip"
   skip_cleanup: true  
 
 cache:
