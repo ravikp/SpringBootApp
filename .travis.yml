@@ -22,6 +22,20 @@ deploy:
     local_dir: ./build/distributions
     skip_cleanup: true
     upload-dir: distributions  
+  - provider: elasticbeanstalk
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    app: SpringBoot
+    env: springboot-env
+    skip_cleanup: true
+    zip_file: ./build/distributions/springboot.zip  
+    bucket_name: aws.ravikp.springboot
+    bucket_path: elasticbeanstalk-builds
+    region: ap-south-1
+    only_create_app_version: true
+    
+
+
 cache:
   directories:
   - $HOME/.m2
