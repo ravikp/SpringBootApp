@@ -1,9 +1,19 @@
-language: java
+language: 
+  - java
+  - python
 
 jdk:
   - oraclejdk7
 
-script: ./gradlew build
+python
+  - "2.7"
+
+install:
+  - pip install awscli
+
+script: 
+  - ./gradlew build
+  - aws --version
 
 deploy:
   - provider: s3
@@ -34,8 +44,6 @@ deploy:
   #   region: ap-south-1
   #   only_create_app_version: true
     
-
-
 cache:
   directories:
   - $HOME/.m2
