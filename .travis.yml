@@ -14,24 +14,24 @@ script:
 
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
     bucket: aws.ravikp.springboot
     region: ap-south-1
     local_dir: ./build/fulljar
     skip_cleanup: true
     upload-dir: full-jar-builds
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
     bucket: aws.ravikp.springboot
     region: ap-south-1
     local_dir: ./build/distributions
     skip_cleanup: true
     upload-dir: distributions  
   # - provider: elasticbeanstalk
-  #   access_key_id: $AWS_ACCESS_KEY
-  #   secret_access_key: $AWS_SECRET_KEY
+  #   access_key_id: $AWS_ACCESS_KEY_ID
+  #   secret_access_key: $AWS_SECRET_ACCESS_KEY
   #   app: SpringBoot
   #   env: springboot-env
   #   skip_cleanup: true
@@ -45,3 +45,7 @@ cache:
   directories:
   - $HOME/.m2
   - $HOME/.gradle
+
+after_deploy:
+  - sh ./cloud-provider/aws/upload-new-application-version.sh
+  - sh ./cloud-provider/aws/deploy-new-application-version.sh
