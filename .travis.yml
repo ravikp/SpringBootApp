@@ -6,13 +6,15 @@ jdk:
 script: ./gradlew build
 
 deploy:
-  provider: s3
+  skip_cleanup: true
+  provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket: "aws.ravikp.springboot"
-  region: ap-south-1
-  local_dir: ./build/fulljar
-  skip_cleanup: true
+  region: "ap-south-1"  
+  app: "SpringBoot"
+  env: "springboot-env"
+  bucket_name: "aws.ravikp.springboot"
+  zip_file: "./build/fulljar/springboot.jar"
 
 cache:
   directories:
