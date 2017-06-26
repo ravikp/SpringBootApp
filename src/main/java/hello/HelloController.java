@@ -10,11 +10,11 @@ class HelloController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greetings.." + new Date() + System.lineSeparator();
+        return "Greetings..1.." + new Date() + System.lineSeparator();
     }
 
     @RequestMapping("/hello")
     public String hello() {
-        return "Hello world:- " + new Date() + System.lineSeparator();
+        return "1..Hello world:- " + new Date() + System.lineSeparator();
     }
 }
