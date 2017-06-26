@@ -10,11 +10,11 @@ class HelloController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greetings..1.." + new Date() + System.lineSeparator();
+        return "Greetings from fully automated deployment system:" + new Date() + System.lineSeparator();
     }
 
-    @RequestMapping("/hello")
-    public String hello() {
-        return "1..Hello world:- " + new Date() + System.lineSeparator();
+    @RequestMapping("/health")    
+    public String health() {
+        return "I'm healthy at:" + new Date() + System.lineSeparator();
     }
 }
