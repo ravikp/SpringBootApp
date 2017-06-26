@@ -1,10 +1,12 @@
+sudo: required
+
 language: java
 
 jdk:
   - oraclejdk7
 
 install:
-  - pip install awscli
+  - sudo pip install awscli
 
 script: 
   - aws --version
