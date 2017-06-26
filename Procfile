@@ -1,1 +1,1 @@
-web: bin/springboot
+web: bin/SpringBootApp
