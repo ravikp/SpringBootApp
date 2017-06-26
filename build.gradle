@@ -53,3 +53,11 @@ task generateFullJar(type:Copy) {
 }
 
 build.dependsOn generateFullJar
+
+distributions {
+    main {
+        contents {
+            from file("./Procfile")
+        }
+    }
+}
