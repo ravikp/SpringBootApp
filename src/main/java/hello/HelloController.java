@@ -10,6 +10,6 @@ class HelloController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greetings from fully automated deployment system:" + new Date() + System.lineSeparator();
+        return "1. Greetings from fully automated deployment system:" + new Date() + System.lineSeparator();
     }    
 }
